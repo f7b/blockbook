@@ -12,7 +12,7 @@ export interface EthereumInternalTransfer {
     type: number;
     from: string;
     to: string;
-    value: string;
+    value?: string;
 }
 export interface EthereumParsedInputParam {
     type: string;
@@ -30,7 +30,7 @@ export interface EthereumSpecific {
     status: number;
     error?: string;
     nonce: number;
-    gasLimit: number;
+    gasLimit?: number;
     gasUsed?: number;
     gasPrice?: string;
     l1Fee?: number;
@@ -97,7 +97,7 @@ export interface Tx {
     blockTime: number;
     size?: number;
     vsize?: number;
-    value: string;
+    value?: string;
     valueIn?: string;
     fees?: string;
     hex?: string;
@@ -109,20 +109,20 @@ export interface Tx {
 }
 export interface FeeStats {
     txCount: number;
-    totalFeesSat: string;
+    totalFeesSat?: string;
     averageFeePerKb: number;
     decilesFeePerKb: number[];
 }
 export interface StakingPool {
     contract: string;
     name: string;
-    pendingBalance: string;
-    pendingDepositedBalance: string;
-    depositedBalance: string;
-    withdrawTotalAmount: string;
-    claimableAmount: string;
-    restakedReward: string;
-    autocompoundBalance: string;
+    pendingBalance?: string;
+    pendingDepositedBalance?: string;
+    depositedBalance?: string;
+    withdrawTotalAmount?: string;
+    claimableAmount?: string;
+    restakedReward?: string;
+    autocompoundBalance?: string;
 }
 export interface ContractInfo {
     type: string;
@@ -154,10 +154,10 @@ export interface Address {
     totalPages?: number;
     itemsOnPage?: number;
     address: string;
-    balance: string;
+    balance?: string;
     totalReceived?: string;
     totalSent?: string;
-    unconfirmedBalance: string;
+    unconfirmedBalance?: string;
     unconfirmedTxs: number;
     txs: number;
     addrTxCount?: number;
@@ -181,7 +181,7 @@ export interface Address {
 export interface Utxo {
     txid: string;
     vout: number;
-    value: string;
+    value?: string;
     height?: number;
     confirmations: number;
     address?: string;
@@ -192,9 +192,9 @@ export interface Utxo {
 export interface BalanceHistory {
     time: number;
     txs: number;
-    received: string;
-    sent: string;
-    sentToSelf: string;
+    received?: string;
+    sent?: string;
+    sentToSelf?: string;
     rates?: { [key: string]: number };
     txid?: string;
 }
@@ -287,8 +287,8 @@ export interface BlockbookInfo {
     about: string;
 }
 export interface SystemInfo {
-    blockbook: BlockbookInfo;
-    backend: BackendInfo;
+    blockbook?: BlockbookInfo;
+    backend?: BackendInfo;
 }
 export interface FiatTicker {
     ts?: number;
